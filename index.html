@@ -291,6 +291,71 @@ header,main,footer{position:relative;z-index:2;}
 .advisory-focus .focus-chip{background:var(--surface-strong);padding:10px 18px;border-radius:999px;font-size:.82rem;color:var(--text-md);border:1px solid var(--border-soft);}
 .advisory-focus .focus-chip:hover{border-color:var(--gold);}
 
+/* --- Detailed Advisory Sections --- */
+.advisory-detail{max-height:0;overflow:hidden;transition:max-height 0.8s cubic-bezier(.16,.84,.32,1);margin-top:0;}
+.advisory-detail.open{max-height:6000px;}
+.advisory-detail .detail-block{margin-bottom:40px;}
+.advisory-detail .detail-block:last-child{margin-bottom:0;}
+.advisory-detail .detail-block h3{font-size:1.2rem;color:var(--gold);margin-bottom:16px;font-family:var(--ff-display);}
+.advisory-detail .detail-block h4{font-size:1rem;color:var(--text-hi);margin-top:16px;margin-bottom:8px;}
+.advisory-detail .detail-block p{font-size:.95rem;color:var(--text-md);line-height:1.7;margin-bottom:10px;}
+.advisory-detail .detail-block ul{list-style:disc;padding-left:20px;}
+.advisory-detail .detail-block ul li{font-size:.92rem;color:var(--text-md);margin-bottom:6px;line-height:1.6;}
+.advisory-detail .detail-block ul li strong{color:var(--text-hi);}
+
+.advisory-hook{text-align:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--border-soft);}
+.advisory-hook .hook-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:999px;font-size:.95rem;font-weight:600;background:linear-gradient(120deg,var(--cyan),var(--blue) 55%,var(--purple));color:#05070d;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+.advisory-hook .hook-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px -8px rgba(63,227,212,.45);}
+.advisory-hook .hook-btn .arrow{transition:transform .4s var(--ease);display:inline-block;}
+.advisory-hook .hook-btn.open .arrow{transform:rotate(180deg);}
+
+/* --- Domain Grid --- */
+.domain-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;}
+.domain-card{background:var(--surface-strong);padding:18px 20px;border-radius:var(--radius-md);border-left:2px solid var(--gold);}
+.domain-card .domain-name{color:var(--gold);font-weight:600;font-size:.92rem;display:block;margin-bottom:4px;}
+.domain-card .domain-learn{font-size:.85rem;color:var(--text-md);}
+.domain-card .domain-learn strong{color:var(--text-hi);font-weight:500;}
+.domain-card .domain-apply{font-size:.85rem;color:var(--text-md);margin-top:6px;}
+.domain-card .domain-apply strong{color:var(--cyan);font-weight:500;}
+
+/* --- Client Table --- */
+.client-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.9rem;}
+.client-table th{text-align:left;padding:10px 14px;background:var(--surface-strong);color:var(--gold);font-weight:600;border-bottom:1px solid var(--border);}
+.client-table td{padding:10px 14px;border-bottom:1px solid var(--border-soft);color:var(--text-md);}
+.client-table tr:last-child td{border-bottom:none;}
+.client-table .highlight-cell{color:var(--text-hi);font-weight:500;}
+
+/* --- Allocation Table --- */
+.allocation-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.9rem;}
+.allocation-table th{text-align:left;padding:10px 14px;background:var(--surface-strong);color:var(--gold);font-weight:600;border-bottom:1px solid var(--border);}
+.allocation-table td{padding:10px 14px;border-bottom:1px solid var(--border-soft);color:var(--text-md);}
+.allocation-table tr:last-child td{border-bottom:none;}
+.allocation-table .pct{color:var(--cyan);font-weight:600;}
+
+/* --- Promise Grid --- */
+.promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
+.promise-item{background:var(--surface-strong);padding:14px 18px;border-radius:var(--radius-sm);border-left:2px solid var(--gold);}
+.promise-item .promise-label{color:var(--gold);font-weight:600;font-size:.85rem;display:block;margin-bottom:2px;}
+.promise-item .promise-desc{font-size:.85rem;color:var(--text-md);}
+
+/* --- Support Steps --- */
+.support-steps{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px,1fr));gap:14px;margin-top:12px;}
+.support-step{background:var(--surface-strong);padding:16px 18px;border-radius:var(--radius-sm);text-align:center;}
+.support-step .step-num{display:inline-block;background:var(--cyan-soft);color:var(--cyan);width:32px;height:32px;line-height:32px;border-radius:50%;font-weight:700;font-size:.85rem;margin-bottom:8px;}
+.support-step .step-label{color:var(--text-hi);font-weight:600;font-size:.9rem;display:block;}
+.support-step .step-desc{font-size:.82rem;color:var(--text-lo);margin-top:4px;}
+
+@media (max-width:680px){
+  .domain-grid{grid-template-columns:1fr;}
+  .promise-grid{grid-template-columns:1fr;}
+  .support-steps{grid-template-columns:1fr 1fr;}
+  .client-table,.allocation-table{font-size:.8rem;}
+  .client-table th,.client-table td,.allocation-table th,.allocation-table td{padding:8px 10px;}
+}
+@media (max-width:480px){
+  .support-steps{grid-template-columns:1fr;}
+}
+
 /* ============================= INSIGHTS ============================= */
 .article-list{display:flex;flex-direction:column;gap:16px;}
 .article-card{border-radius:var(--radius-lg);overflow:hidden;}
@@ -405,6 +470,7 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Case Studies</a>
+            <a href="#projects-section">Projects</a>
             <a href="#journey">Journey</a>
             <a href="#advisory">Freelance</a>
             <a href="#resume">Resume</a>
@@ -447,7 +513,6 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
                             <div><h4>Mohamed Asfaq</h4><span>OPS · SALES · CRM</span></div>
                         </div>
                         <div class="id-rows">
-                            <!-- Reordered: core competencies first, then industries, then finance -->
                             <div class="id-row"><span class="ic"></span>Sales Operations · Revenue Growth</div>
                             <div class="id-row"><span class="ic"></span>CRM Strategy · Process Optimization</div>
                             <div class="id-row"><span class="ic"></span>PropTech · Healthcare · SaaS</div>
@@ -602,7 +667,7 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
         </div>
     </section>
 
-    <!-- ============================= PROJECTS / CASE STUDIES ============================= -->
+    <!-- ============================= CASE STUDIES ============================= -->
     <section id="projects">
         <div class="wrap">
             <div class="section-head reveal">
@@ -612,25 +677,143 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
             </div>
             <div class="proj-grid">
 
+                <!-- Scaling Sales in a Startup -->
                 <div class="glass proj-card reveal">
                     <div class="proj-head">
-                        <div><h3>Sales Analytics Dashboard</h3><p>Interactive dashboard tracking pipeline health, conversion rates, and revenue performance.</p></div>
+                        <div><h3>Scaling Sales in a Startup</h3><p>Built a repeatable sales motion from scratch in a venture-backed startup.</p></div>
                         <div class="proj-toggle">+</div>
                     </div>
                     <div class="proj-body">
                         <div class="proj-body-inner">
-                            <p><span class="label">Problem:</span> Sales leadership lacked a unified, real-time view of pipeline health — visibility was scattered across CRM exports and manual spreadsheets, making it hard to spot bottlenecks early.</p>
-                            <p><span class="label">Approach:</span> Extracted opportunity data from Salesforce, structured and cleaned it in Excel, then built an interactive Power BI dashboard with slicers for time period, region, and product line — tracking lead-to-opportunity rate, win rate, deal size, and sales velocity in one live view.</p>
-                            <p><span class="label">Outcome:</span> Replaced fragmented manual reporting with a single source of truth leadership could check anytime, surfacing stage-level drop-off patterns that informed where coaching and nurturing efforts should focus.</p>
-                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/sales-analytics-dashboard" target="_blank" rel="noopener">View full case study on GitHub →</a>
-                            <div class="proj-tools"><span>Salesforce</span><span>Excel</span><span>Power BI</span></div>
+                            <p><span class="label">Problem:</span> Early-stage startup with product-market fit but no structured sales process — revenue was inconsistent, and the team lacked a repeatable motion to scale.</p>
+                            <p><span class="label">Approach:</span> Designed GTM strategy, implemented a lightweight CRM, and trained a small team on a structured framework — from lead qualification to deal closure and post-sale handoff.</p>
+                            <p><span class="label">Outcome:</span> Significant revenue growth and a multi-million dollar pipeline within 18 months, with a sales motion that could be replicated as the team scaled.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/scaling-sales-startup-environment" target="_blank" rel="noopener">View full case study on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>Excel</span><span>Agile</span></div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Multi-Channel Revenue Optimization -->
                 <div class="glass proj-card reveal">
                     <div class="proj-head">
-                        <div><h3>CRM Process Optimization</h3><p>Led a CRM enablement project that measurably improved conversion and accelerated the sales cycle.</p></div>
+                        <div><h3>Multi-Channel Revenue Optimization</h3><p>Unified B2B, B2C, and D2C channels for a multi-channel organization.</p></div>
+                        <div class="proj-toggle">+</div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-body-inner">
+                            <p><span class="label">Problem:</span> Fragmented customer data and siloed channel strategies were driving inefficiency — acquisition costs were rising, and deal sizes remained stagnant.</p>
+                            <p><span class="label">Approach:</span> Built a single customer data model, defined distinct channel strategies, and implemented dynamic budget allocation to optimize spend across B2B, B2C, and D2C channels.</p>
+                            <p><span class="label">Outcome:</span> Reduced acquisition costs and increased deal sizes across all channels, with a unified view of customer lifetime value that informed future investment decisions.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/multi-channel-revenue-optimization" target="_blank" rel="noopener">View full case study on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>Oracle</span><span>Excel</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B2B Revenue Engine -->
+                <div class="glass proj-card reveal">
+                    <div class="proj-head">
+                        <div><h3>B2B Revenue Engine</h3><p>Redesigned lead qualification and handoff protocols for a B2B software company.</p></div>
+                        <div class="proj-toggle">+</div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-body-inner">
+                            <p><span class="label">Problem:</span> Lead qualification was inconsistent — sales and marketing operated with different definitions, causing friction and lost opportunities.</p>
+                            <p><span class="label">Approach:</span> Implemented a unified scoring model and stage-specific exit criteria, aligning sales and marketing on a single definition of a qualified lead with clear handoff protocols.</p>
+                            <p><span class="label">Outcome:</span> Dramatically improved conversion rates and shortened sales cycles, with a revenue engine that scaled predictably as the pipeline grew.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/b2b-revenue-engine-pipeline-to-close" target="_blank" rel="noopener">View full case study on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>HubSpot</span><span>Excel</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing-Sales Alignment -->
+                <div class="glass proj-card reveal">
+                    <div class="proj-head">
+                        <div><h3>Marketing-Sales Alignment</h3><p>Broke down silos between Marketing and Sales for a mid-sized B2B firm.</p></div>
+                        <div class="proj-toggle">+</div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-body-inner">
+                            <p><span class="label">Problem:</span> Marketing and Sales operated in silos — different KPIs, no shared definition of a qualified lead, and no visibility into each other's performance.</p>
+                            <p><span class="label">Approach:</span> Defined shared KPIs, implemented SLAs between the teams, and built a unified dashboard that gave both sides real-time visibility into pipeline contribution and conversion.</p>
+                            <p><span class="label">Outcome:</span> Turned friction into collaboration, significantly boosting revenue per marketing dollar and creating a culture of shared accountability.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/marketing-sales-alignment-framework" target="_blank" rel="noopener">View full case study on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>HubSpot</span><span>Agile</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Retention Excellence -->
+                <div class="glass proj-card reveal">
+                    <div class="proj-head">
+                        <div><h3>Customer Retention Excellence</h3><p>Transformed post-sale experience for a D2C subscription business.</p></div>
+                        <div class="proj-toggle">+</div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-body-inner">
+                            <p><span class="label">Problem:</span> High churn and low customer lifetime value — post-sale engagement was inconsistent, and there was no systematic approach to retention.</p>
+                            <p><span class="label">Approach:</span> Redesigned the onboarding experience, built automated engagement sequences, and implemented health scoring to identify at-risk customers early.</p>
+                            <p><span class="label">Outcome:</span> Substantial improvements in retention and customer lifetime value, with a predictable recurring revenue stream that reduced dependency on new customer acquisition.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/customer-retention-operational-excellence" target="_blank" rel="noopener">View full case study on GitHub →</a>
+                            <div class="proj-tools"><span>HubSpot</span><span>Salesforce</span><span>Power BI</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Negotiation & Deal Structuring -->
+                <div class="glass proj-card reveal">
+                    <div class="proj-head">
+                        <div><h3>Negotiation &amp; Deal Structuring</h3><p>Led complex commercial negotiations across PropTech, healthcare, and e-commerce.</p></div>
+                        <div class="proj-toggle">+</div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-body-inner">
+                            <p><span class="label">Problem:</span> High-stakes commercial negotiations lacked a structured approach — deals were often driven by intuition rather than a repeatable framework.</p>
+                            <p><span class="label">Approach:</span> Structured win-win contracts, managed stakeholder alignment across legal, finance, and operations, and closed high-value deals — from international property transactions to enterprise service agreements.</p>
+                            <p><span class="label">Outcome:</span> Consistently achieved favorable terms while preserving relationships, with a negotiation framework that could be applied across industries and deal types.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/negotiation-deal-structuring" target="_blank" rel="noopener">View full case study on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>Microsoft 365</span><span>CRM Systems</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= PROJECTS SECTION ============================= -->
+    <section id="projects-section">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <div class="eyebrow">Projects</div>
+                <h2>Tools, frameworks &amp; templates I've built.</h2>
+                <p>Each project represents a repeatable solution to a common operational challenge — with full methodology on GitHub.</p>
+            </div>
+            <div class="proj-grid">
+
+                <!-- Sales Analytics Dashboard -->
+                <div class="glass proj-card reveal">
+                    <div class="proj-head">
+                        <div><h3>Sales Analytics Dashboard</h3><p>Interactive dashboard tracking pipeline health and conversion rates.</p></div>
+                        <div class="proj-toggle">+</div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-body-inner">
+                            <p><span class="label">Problem:</span> Sales leadership lacked a unified, real-time view of pipeline health — visibility was scattered across CRM exports and manual spreadsheets.</p>
+                            <p><span class="label">Approach:</span> Extracted opportunity data from Salesforce, structured and cleaned it in Excel, then built an interactive Power BI dashboard with slicers for time period, region, and product line — tracking lead-to-opportunity rate, win rate, deal size, and sales velocity in one live view.</p>
+                            <p><span class="label">Outcome:</span> Replaced fragmented manual reporting with a single source of truth leadership could check anytime, surfacing stage-level drop-off patterns that informed coaching and nurturing efforts.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/sales-analytics-dashboard" target="_blank" rel="noopener">View full project on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>Power BI</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CRM Process Optimization -->
+                <div class="glass proj-card reveal">
+                    <div class="proj-head">
+                        <div><h3>CRM Process Optimization</h3><p>Complete redesign delivering 25% lead conversion increase.</p></div>
                         <div class="proj-toggle">+</div>
                     </div>
                     <div class="proj-body">
@@ -638,15 +821,16 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
                             <p><span class="label">Problem:</span> The CRM was being used as a static database — inconsistent data entry, no standardized follow-up cadence, and no clear visibility into where leads were stalling.</p>
                             <p><span class="label">Approach:</span> Ran stakeholder interviews to map the real sales process, identified the qualification-to-opportunity stage as the biggest drop-off point, then rebuilt the Salesforce stage structure with automated task creation and alerts. Rolled out training over a structured adoption window and tracked conversion by stage on a new dashboard.</p>
                             <p><span class="label">Outcome:</span> The redesign contributed to a 25% increase in lead conversion, with a sales team that finally trusted the pipeline enough to use it for forecasting.</p>
-                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/crm-process-optimization-case-study" target="_blank" rel="noopener">View full case study on GitHub →</a>
-                            <div class="proj-tools"><span>Salesforce</span><span>HubSpot</span><span>Agile</span></div>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/crm-process-optimization-case-study" target="_blank" rel="noopener">View full project on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>HubSpot</span></div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Invoice Collection Optimization -->
                 <div class="glass proj-card reveal">
                     <div class="proj-head">
-                        <div><h3>Invoice Collection Optimization</h3><p>Streamlined the collections process, reducing average invoice collection time by over a week.</p></div>
+                        <div><h3>Invoice Collection Optimization</h3><p>Process redesign reducing collection time by 10 days.</p></div>
                         <div class="proj-toggle">+</div>
                     </div>
                     <div class="proj-body">
@@ -654,15 +838,16 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
                             <p><span class="label">Problem:</span> Collections followed no fixed cadence — clients learned that deadlines were negotiable, disputes lingered, and the AR team spent more time chasing than reconciling.</p>
                             <p><span class="label">Approach:</span> Categorized overdue invoices by root cause (dispute, lost invoice, approval bottleneck), introduced a fixed reminder schedule at set intervals, and instituted a weekly cross-functional collections review between finance and sales.</p>
                             <p><span class="label">Outcome:</span> Average collection time dropped by 10 days, dispute resolution accelerated, and the finance team gained a repeatable process instead of reactive firefighting.</p>
-                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/Invoice-collection-optimization" target="_blank" rel="noopener">View full case study on GitHub →</a>
-                            <div class="proj-tools"><span>Oracle</span><span>Excel</span><span>Six Sigma</span></div>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/invoice-collection-optimization" target="_blank" rel="noopener">View full project on GitHub →</a>
+                            <div class="proj-tools"><span>Oracle</span><span>Six Sigma</span></div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Customer Success Playbook -->
                 <div class="glass proj-card reveal">
                     <div class="proj-head">
-                        <div><h3>Customer Success Playbook</h3><p>Developed a comprehensive framework covering onboarding, upsell, and retention.</p></div>
+                        <div><h3>Customer Success Playbook</h3><p>Comprehensive framework driving 15% revenue growth.</p></div>
                         <div class="proj-toggle">+</div>
                     </div>
                     <div class="proj-body">
@@ -670,15 +855,33 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
                             <p><span class="label">Problem:</span> Customer success activity was reactive — account managers responded to issues as they surfaced rather than proactively driving renewal and expansion.</p>
                             <p><span class="label">Approach:</span> Built a four-phase playbook — onboarding, adoption &amp; engagement, growth &amp; expansion, and retention &amp; risk mitigation — with defined touchpoints, a health-score framework, and clear upsell-trigger criteria for each account stage.</p>
                             <p><span class="label">Outcome:</span> The structured approach contributed to 15% quarterly revenue growth at Omega Healthcare through systematic account expansion, giving account managers a consistent path instead of improvising per client.</p>
-                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/customer-success-playbook" target="_blank" rel="noopener">View full case study on GitHub →</a>
-                            <div class="proj-tools"><span>HubSpot</span><span>CSM</span><span>Agile</span></div>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/customer-success-playbook" target="_blank" rel="noopener">View full project on GitHub →</a>
+                            <div class="proj-tools"><span>HubSpot</span><span>CSM</span></div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Business Operations Templates -->
                 <div class="glass proj-card reveal">
                     <div class="proj-head">
-                        <div><h3>PropTech ROI &amp; Market Analysis</h3><p>In-depth market analysis of PropTech investments in Saudi Arabia aligned with Vision 2030.</p></div>
+                        <div><h3>Business Operations Templates</h3><p>Reusable templates for forecasting and reporting.</p></div>
+                        <div class="proj-toggle">+</div>
+                    </div>
+                    <div class="proj-body">
+                        <div class="proj-body-inner">
+                            <p><span class="label">Problem:</span> Teams were rebuilding the same reports and forecasts from scratch every cycle — wasting time and introducing inconsistency.</p>
+                            <p><span class="label">Approach:</span> Built a library of reusable templates for sales forecasting, pipeline reporting, and operational dashboards, designed to be plug-and-play for any team.</p>
+                            <p><span class="label">Outcome:</span> Reduced reporting time by 50%+ and ensured consistency across teams, with templates that could be adapted to different business contexts without starting from zero.</p>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/business-operations-templates" target="_blank" rel="noopener">View full project on GitHub →</a>
+                            <div class="proj-tools"><span>Microsoft 365</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PropTech ROI & Market Analysis -->
+                <div class="glass proj-card reveal">
+                    <div class="proj-head">
+                        <div><h3>PropTech ROI &amp; Market Analysis</h3><p>PropTech investment analysis aligned with Vision 2030.</p></div>
                         <div class="proj-toggle">+</div>
                     </div>
                     <div class="proj-body">
@@ -686,8 +889,8 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
                             <p><span class="label">Problem:</span> HNW investors needed clear, defensible data to evaluate Saudi real estate opportunities in a market shaped by fast-moving regulation and large-scale development programs.</p>
                             <p><span class="label">Approach:</span> Built a financial model to assess NPV and IRR across asset classes, layered in Vision 2030 development plans (including giga-projects like NEOM and the Red Sea) to flag emerging growth corridors, and mapped relative yield and appreciation potential by city and segment.</p>
                             <p><span class="label">Outcome:</span> Gave the sales team a data-backed framework for prioritizing investor conversations — directing attention toward higher-yield residential plays in Riyadh and appreciation-driven commercial assets near new transport infrastructure.</p>
-                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/Proptech-roi-market-analysis" target="_blank" rel="noopener">View full case study on GitHub →</a>
-                            <div class="proj-tools"><span>Salesforce</span><span>Excel</span><span>PropTech</span></div>
+                            <a class="proj-link" href="https://github.com/MohamedAsfaq5/proptech-roi-market-analysis" target="_blank" rel="noopener">View full project on GitHub →</a>
+                            <div class="proj-tools"><span>Salesforce</span><span>PropTech</span></div>
                         </div>
                     </div>
                 </div>
@@ -721,19 +924,199 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
         <div class="wrap">
             <div class="section-head reveal">
                 <div class="eyebrow">Freelance / Advisory</div>
-                <h2>Financial literacy as a service.</h2>
+                <h2>Guiding 15+ portfolios with precision &amp; trust.</h2>
+                <p style="font-size:1.05rem; color:var(--gold); font-weight:500;">"I treat every rupee as if it were my own — because trust is earned through track record, not promises."</p>
             </div>
             <div class="glass advisory-card reveal">
                 <div class="story-text">
-                    <p>My journey into financial advisory started quietly — with a personal savings discipline that slowly evolved into a deep curiosity about how money works. I began reading, tracking markets, and building my own portfolio. Then something unexpected happened: colleagues and friends started asking me how I was thinking about my investments.</p>
-                    <p style="margin-top:16px;">At first, it was casual conversations over coffee. <strong>Then people started reaching out specifically for advice</strong> — not just for quick tips, but for structured guidance on mutual fund selection, SIP planning, and portfolio construction. Word spread, and before long, I found myself sitting down with <span class="highlight">15+ individuals</span> to help them think through their financial goals and build strategies to achieve them.</p>
-                    <p style="margin-top:16px;">My process is grounded in understanding each person's unique financial persona — their income patterns, risk tolerance, time horizon, and life goals. I don't offer generic advice; I research market trends, analyze fund performance, and construct <strong>risk-balanced portfolios</strong> that align with where they are and where they want to go. Whether it's someone starting their first SIP or someone diversifying a mature portfolio, I bring the same disciplined, research-driven approach that I apply to operations work — less about hot tips, more about building a process the person can actually stick to.</p>
-                    <p style="margin-top:16px;"><strong>How I work with each person:</strong> I begin by sitting down with them to educate on the fundamentals — understanding the difference between needs and wants, building an emergency fund first, and securing the right insurance cover. Only then do we move to wealth planning. I customize recommendations based on their specific life stage and goals, then help them build <strong>investment habits starting with small, consistent contributions</strong>. The north star is always <span class="highlight">early retirement readiness</span> — not just saving, but creating a structure that gets them there with clarity and confidence.</p>
+                    <p>Active personal investor with hands-on experience in mutual fund strategy, SIP planning, and long-term portfolio construction. Advised <span class="highlight">15+ individuals</span> on risk-balanced investment planning.</p>
+                    <p style="margin-top:12px;">My journey into financial advisory started quietly — with a personal savings discipline that slowly evolved into a deep curiosity about how money works. I began reading, tracking markets, and building my own portfolio. Then something unexpected happened: colleagues and friends started asking me how I was thinking about my investments.</p>
+                    <p style="margin-top:12px;">At first, it was casual conversations over coffee. <strong>Then people started reaching out specifically for advice</strong> — not just for quick tips, but for structured guidance on mutual fund selection, SIP planning, and portfolio construction. Word spread, and before long, I found myself sitting down with <span class="highlight">15+ individuals</span> to help them think through their financial goals and build strategies to achieve them.</p>
                 </div>
-                <div class="advisory-mission">
-                    <strong>Mission:</strong> Make financial literacy accessible and actionable. I believe that everyone deserves to understand how to grow their wealth, and I'm committed to demystifying investing for people who never thought it was for them.
+
+                <!-- Hook Button -->
+                <div class="advisory-hook">
+                    <button class="hook-btn" id="advisoryToggle">
+                        <span>Explore My Advisory Approach</span>
+                        <span class="arrow">▾</span>
+                    </button>
                 </div>
-                <!-- Focus areas as chips instead of stats -->
+
+                <!-- Detailed Content (hidden initially) -->
+                <div class="advisory-detail" id="advisoryDetail">
+
+                    <!-- How This Journey Started -->
+                    <div class="detail-block">
+                        <h3>🌱 How This Journey Started</h3>
+                        <p><strong style="color:var(--gold);">Initial Spark (2015-2019):</strong> I began managing my own portfolio with a modest SIP and a handful of blue-chip stocks. What started as a personal experiment quickly turned into an obsession. I studied market cycles, mutual fund performance, and the psychological biases that drive investor behavior.</p>
+                        <p><strong style="color:var(--gold);">The First Requests (2020-2021):</strong> Friends and colleagues started noticing my disciplined approach and asked for guidance. I began advising a small circle — helping them understand their risk tolerance, simplify their financial goals, and build portfolios aligned with their life stage and aspirations.</p>
+                        <p><strong style="color:var(--gold);">The Pivot (2022-Present):</strong> The circle grew to 15+ active individuals — professionals, business owners, and families — who now trust me to manage their financial planning, portfolio construction, and goal-based investing. This isn't a side hustle; it's a responsibility I carry with the seriousness of a veteran advisor.</p>
+                    </div>
+
+                    <!-- What I've Mastered -->
+                    <div class="detail-block">
+                        <h3>📚 What I've Mastered</h3>
+                        <div class="domain-grid">
+                            <div class="domain-card">
+                                <span class="domain-name">📊 Stock Market &amp; Equity</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> Identifying undervalued companies, sector rotation, and timing vs. time in the market</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I focus on long-term compounding rather than short-term trading</div>
+                            </div>
+                            <div class="domain-card">
+                                <span class="domain-name">🏦 Bonds &amp; Fixed Income</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> The role of sovereign bonds, corporate bonds, and debt funds in portfolio stability</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I use bonds as a stabilizer for clients approaching retirement</div>
+                            </div>
+                            <div class="domain-card">
+                                <span class="domain-name">💰 Mutual Funds &amp; SIPs</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> Fund selection, expense ratios, and the power of rupee-cost averaging</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I design diversified fund portfolios tailored to client risk profiles</div>
+                            </div>
+                            <div class="domain-card">
+                                <span class="domain-name">📈 Currencies &amp; Global Macro</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> Exchange rate dynamics, interest rate movements, and international diversification</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I advise on currency hedges and explore international ETFs for global exposure</div>
+                            </div>
+                            <div class="domain-card">
+                                <span class="domain-name">🛡️ Insurance &amp; Protection</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> Term insurance, health coverage, and critical illness plans</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I ensure every client has adequate coverage BEFORE investing</div>
+                            </div>
+                            <div class="domain-card">
+                                <span class="domain-name">💸 Savings &amp; Spend Control</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> The 50-30-20 rule, zero-based budgeting, and behavioral spend tracking</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I help clients control the leakages in their monthly cash flow</div>
+                            </div>
+                            <div class="domain-card">
+                                <span class="domain-name">🏁 Early Retirement &amp; FIRE</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> The 4% rule, withdrawal strategies, and sustainable withdrawal rates</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I advise on FIRE strategies for clients wanting financial freedom before 50</div>
+                            </div>
+                            <div class="domain-card">
+                                <span class="domain-name">🧠 Market Psychology</span>
+                                <div class="domain-learn"><strong>What I learned:</strong> Greed, fear, recency bias, and overconfidence</div>
+                                <div class="domain-apply"><strong>How I apply it:</strong> I act as a behavioral coach — keeping clients calm during bear markets</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Methodology & Tools -->
+                    <div class="detail-block">
+                        <h3>🔧 Methodology &amp; Tools</h3>
+                        <h4>The Process</h4>
+                        <ul>
+                            <li><strong>Discovery Call:</strong> Understand the client's life stage, income, expenses, liabilities, risk tolerance, and financial goals</li>
+                            <li><strong>Current Financial Audit:</strong> Review existing insurance, investments, debt, and savings — identifying gaps</li>
+                            <li><strong>Strategy Design:</strong> Build a custom framework — split between Equity, Debt, Gold, Liquid assets, and International Exposure</li>
+                            <li><strong>Implementation:</strong> Execute through direct equity, mutual funds, PPF, and insurance products</li>
+                            <li><strong>Ongoing Review &amp; Rebalancing:</strong> Quarterly review calls to track progress and adjust strategies</li>
+                        </ul>
+                        <h4 style="margin-top:18px;">Tools I Rely On</h4>
+                        <ul>
+                            <li><strong>Screener.in</strong> &amp; <strong>Moneycontrol</strong> for fundamental analysis</li>
+                            <li><strong>Value Research</strong> for mutual fund comparison &amp; Forex Market</li>
+                            <li><strong>Zerodha / Groww</strong> for equity and ETF execution (India market)</li>
+                            <li><strong>Excel / Notion</strong> — I maintain a highly detailed, custom portfolio tracker for every client</li>
+                            <li><strong>Custom automation workflows</strong>, proprietary dashboards, and niche data sources I've refined over time</li>
+                        </ul>
+                    </div>
+
+                    <!-- Current Clientele -->
+                    <div class="detail-block">
+                        <h3>👥 Current Clientele</h3>
+                        <p>I currently advise 15+ individuals with diversified portfolios aligned to their financial goals and risk profiles.</p>
+                        <table class="client-table">
+                            <thead><tr><th>Client Profile</th><th>Portfolio Focus</th><th>Average Holding Period</th></tr></thead>
+                            <tbody>
+                                <tr><td><span class="highlight-cell">Young Professionals (25-35 yrs)</span></td><td>High-growth equity + ELSS + Small-cap</td><td>7-10 years</td></tr>
+                                <tr><td><span class="highlight-cell">Business Owners (35-50 yrs)</span></td><td>Balanced (Equity 60% + Debt 30% + Gold 10%)</td><td>10-15 years</td></tr>
+                                <tr><td><span class="highlight-cell">Pre-Retirees (50-60 yrs)</span></td><td>Conservative (Debt 50% + Equity 30% + Liquid 20%)</td><td>5-7 years</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Sample Portfolio Allocation -->
+                    <div class="detail-block">
+                        <h3>📊 Sample Portfolio Allocation (Illustrative)</h3>
+                        <table class="allocation-table">
+                            <thead><tr><th>Asset Class</th><th>Allocation %</th><th>Rationale</th></tr></thead>
+                            <tbody>
+                                <tr><td>Large Cap Equity (India)</td><td><span class="pct">25%</span></td><td>Core portfolio stability and long-term growth</td></tr>
+                                <tr><td>Mid Cap Equity (India)</td><td><span class="pct">15%</span></td><td>Higher growth potential for younger clients</td></tr>
+                                <tr><td>Small Cap Equity (India)</td><td><span class="pct">10%</span></td><td>Aggressive alpha generation</td></tr>
+                                <tr><td>International Exposure</td><td><span class="pct">10%</span></td><td>Dollar diversification and global macro</td></tr>
+                                <tr><td>Debt &amp; Bonds (India)</td><td><span class="pct">20%</span></td><td>Stability and fixed-income returns</td></tr>
+                                <tr><td>Gold</td><td><span class="pct">5%</span></td><td>Inflation hedge and portfolio diversifier</td></tr>
+                                <tr><td>Liquid / Emergency</td><td><span class="pct">10%</span></td><td>6-month emergency corpus</td></tr>
+                                <tr><td>Forex / International Schemes</td><td><span class="pct">5%</span></td><td>Currency diversification and global opportunities</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Why Clients Trust Me -->
+                    <div class="detail-block">
+                        <h3>🤝 Why Clients Trust Me</h3>
+                        <p style="color:var(--gold); font-weight:500; margin-bottom:12px;">"Trust is not given — it is earned through consistency, transparency, and delivering what you promised."</p>
+                        <div class="promise-grid">
+                            <div class="promise-item">
+                                <span class="promise-label">💬 No Jargon</span>
+                                <span class="promise-desc">I explain complex financial concepts in simple, actionable language</span>
+                            </div>
+                            <div class="promise-item">
+                                <span class="promise-label">🔍 Transparency</span>
+                                <span class="promise-desc">I don't sell products for commission — every recommendation is client-first</span>
+                            </div>
+                            <div class="promise-item">
+                                <span class="promise-label">📉 Market Ups &amp; Downs</span>
+                                <span class="promise-desc">I don't panic during corrections and I don't get greedy during bull runs</span>
+                            </div>
+                            <div class="promise-item">
+                                <span class="promise-label">📈 Results-Focused</span>
+                                <span class="promise-desc">Portfolios I've managed have consistently outperformed benchmarks over 3-5 year horizons</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How I Support Your Journey -->
+                    <div class="detail-block">
+                        <h3>🚀 How I Support Your Financial Journey</h3>
+                        <div class="support-steps">
+                            <div class="support-step">
+                                <div class="step-num">1</div>
+                                <span class="step-label">Goal Mapping</span>
+                                <span class="step-desc">Define your "why" — what are you truly working towards?</span>
+                            </div>
+                            <div class="support-step">
+                                <div class="step-num">2</div>
+                                <span class="step-label">Roadmap Creation</span>
+                                <span class="step-desc">A detailed, step-by-step plan with clear milestones</span>
+                            </div>
+                            <div class="support-step">
+                                <div class="step-num">3</div>
+                                <span class="step-label">Execution Support</span>
+                                <span class="step-desc">Guidance on where to invest, how much, and when</span>
+                            </div>
+                            <div class="support-step">
+                                <div class="step-num">4</div>
+                                <span class="step-label">Monthly Monitoring</span>
+                                <span class="step-desc">Portfolio tracking, rebalancing alerts, and strategy adjustments</span>
+                            </div>
+                            <div class="support-step">
+                                <div class="step-num">5</div>
+                                <span class="step-label">Emotional Support</span>
+                                <span class="step-desc">I am your call during market volatility — helping you stay the course</span>
+                            </div>
+                        </div>
+                        <p style="margin-top:20px; text-align:center; color:var(--gold); font-weight:500; font-size:1.05rem;">"My goal is not just to grow your money — it's to give you the confidence and freedom to focus on what matters most in your life."</p>
+                    </div>
+
+                </div>
+
+                <!-- Tags -->
+                <div class="advisory-tags">
+                    <span>Mutual Funds</span><span>SIP Planning</span><span>Portfolio Construction</span>
+                    <span>Risk Advisory</span><span>Wealth Strategy</span><span>Early Retirement</span>
+                </div>
                 <div class="advisory-focus">
                     <span class="focus-chip">Emergency Fund Planning</span>
                     <span class="focus-chip">Insurance &amp; Protection</span>
@@ -743,10 +1126,6 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
                     <span class="focus-chip">Portfolio Diversification</span>
                     <span class="focus-chip">Early Retirement Planning</span>
                     <span class="focus-chip">Behavioral Finance</span>
-                </div>
-                <div class="advisory-tags">
-                    <span>Mutual Funds</span><span>SIP Planning</span><span>Portfolio Construction</span>
-                    <span>Risk Advisory</span><span>Wealth Strategy</span><span>Early Retirement</span>
                 </div>
             </div>
         </div>
@@ -1211,6 +1590,19 @@ footer{padding:48px 0;border-top:1px solid var(--border-soft);}
         }
         wireExpand('.proj-card', '.proj-head', '.proj-body');
         wireExpand('.article-card', '.article-head', '.article-body');
+
+        // Advisory Hook Button Toggle
+        var advisoryToggle = document.getElementById('advisoryToggle');
+        var advisoryDetail = document.getElementById('advisoryDetail');
+        var isAdvisoryOpen = false;
+
+        advisoryToggle.addEventListener('click', function() {
+            isAdvisoryOpen = !isAdvisoryOpen;
+            advisoryDetail.classList.toggle('open', isAdvisoryOpen);
+            advisoryToggle.classList.toggle('open', isAdvisoryOpen);
+            advisoryToggle.querySelector('.arrow').textContent = isAdvisoryOpen ? '▴' : '▾';
+            advisoryToggle.querySelector('span:first-child').textContent = isAdvisoryOpen ? 'Collapse Advisory Details' : 'Explore My Advisory Approach';
+        });
 
         var resumeToggle = document.getElementById('resumeToggle');
         var resumePanel = document.getElementById('resumePanel');
